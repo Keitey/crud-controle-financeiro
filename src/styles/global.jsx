@@ -35,8 +35,14 @@ p, h1, h2, h3, h4, h5, h6{
 }
 
 #root, #__next{
+  // aqui você estava deixando
+  // "problematico" para telas maiores
+  // por colocar o máximo como 1440px
+
+  // esse link mostra isso:
+  // https://prnt.sc/v4LKQCJ2GORg 
+  
   isolation: isolate;
-  max-width: 1440px;
 }
 `;
 
