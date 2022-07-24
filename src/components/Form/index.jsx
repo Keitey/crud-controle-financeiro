@@ -18,6 +18,24 @@ const Form = ({ handleAdd, transactionsList, setTransactionsList }) => {
       return;
     }
 
+    // adicionar um limite para evitar desc gigantescas
+
+    // esse link mostra isso:
+    // https://prnt.sc/LlAm9doAb30w
+    if (desc.split("").length > 100) {
+      alert("Limite de 100 caracteres");
+      setDesc(desc.substring(0, 100));
+      return;
+    }
+
+    // adicionar um limite para evitar valores gigantescos
+    // mesmo motivo acima
+    if (amount.split("").length > 20) {
+      alert("Limite de 20 caracteres");
+      setAmount(amount.substring(0, 20));
+      return;
+    }
+
     const transaction = {
       id: generateID(),
       desc: desc,
